@@ -10,6 +10,7 @@ Run the following command to add the line to your `~/.bashrc` file:
 
    ```bash
    echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+'''
 
 ### Installtion the driver
 
