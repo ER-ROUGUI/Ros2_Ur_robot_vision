@@ -68,8 +68,9 @@ Follow these steps to install the UR Driver and set up a UR robot for communicat
 
     Ensure to replace `<ur_type>` with the specific type of your Universal Robots robot and set the correct robot IP address (e.g., `192.168.1.101`). This command launches the UR robot driver and initializes communication with ROS 2.
 
-3. Optionally, visualize the state of the robot in Rviz.
+3. Optionally, visualize the state of the robot in Rviz. setting up launch_rviz parametre on True
 
-Now, your UR robot should be set up and ready to communicate with
+4.Run the **External Control** program from the PolyScope interface.
+Now, your Universal Robots robot is ready to accept external control commands. Ensure that the IP address and port configuration match the parameters used in the ROS 2 launch command.
 
 
