@@ -68,9 +68,32 @@ Follow these steps to install the UR Driver and set up a UR robot for communicat
 
     Ensure to replace `<ur_type>` with the specific type of your Universal Robots robot and set the correct robot IP address (e.g., `192.168.1.101`). This command launches the UR robot driver and initializes communication with ROS 2.
 
-3. Optionally, visualize the state of the robot in Rviz. setting up launch_rviz parametre on True
+3. Optionally, visualize the state of the robot in Rviz. setting up launch_rviz parametre on True.
 
-4.Run the **External Control** program from the PolyScope interface.
+4. Run the **External Control** program from the PolyScope interface.
 Now, your Universal Robots robot is ready to accept external control commands. Ensure that the IP address and port configuration match the parameters used in the ROS 2 launch command.
 
+## Testing Communication with the Robot
+
+To verify the communication between ROS 2 and the Universal Robots robot, follow these steps:
+
+1. Open a new terminal and use the following command to echo the `/joint_states` topic, displaying the actual joint positions of the robot:
+
+    ```bash
+    ros2 topic echo /joint_states
+    ```
+
+   Observe the joint position values and ensure they reflect the current state of the robot.
+
+2. Move the robot using the PolyScope interface on the robot controller. You should observe changes in the joint positions reflected in the terminal where you are echoing the `/joint_states` topic.
+
+3. Additionally, you can visualize the communication graph using `rqt_graph`. Open a new terminal and enter the following command:
+
+    ```bash
+    rqt_graph
+    ```
+
+   This will display a graphical representation of the ROS 2 communication graph, allowing you to see the connections between nodes.
+
+Now, you have successfully tested the communication between ROS 2 and the Universal Robots robot, and you can monitor joint positions and visualize the communication graph.
 
