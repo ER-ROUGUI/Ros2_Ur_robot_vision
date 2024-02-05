@@ -13,10 +13,13 @@ Type the command after the dollar sign and hit enter:
 $ echo hello
 hello
 ```
-   
+
+
+
 ```
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 ```
+
 
 ### Installtion the driver
 
