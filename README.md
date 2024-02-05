@@ -1,7 +1,7 @@
 # Robotic Control with ROS2 and Visual Servoing
 
 This project involves controlling a Universal Robot UR3e using ROS2 with the Humble distribution. It includes creating geometric and kinematic models of the robot 
-based on its DH parameters, implementing Image-Based Visual Servoing (IBVS), and explaining the installation and configuration steps
+based on its [DH parameters](https://www.universal-robots.com/articles/ur/application-installation/dh-parameters-for-calculations-of-kinematics-and-dynamics/), implementing Image-Based Visual Servoing (IBVS), and explaining the installation and configuration steps
 ## Installation Steps
 ### Installation ROS2
 To begin, you'll need to install Ubuntu (version 22.04). Next, follow the steps outlined in the [official ROS2 Humble installation tutorial](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html).
