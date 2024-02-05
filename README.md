@@ -8,8 +8,9 @@ To begin, you'll need to install Ubuntu (version 22.04). Next, follow the steps 
 
 Run the following command to add the line to your `~/.bashrc` file:
 
-   ```
-   echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+   
+```
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 '''
 
 ### Installtion the driver
