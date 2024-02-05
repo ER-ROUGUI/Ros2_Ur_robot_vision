@@ -11,7 +11,7 @@ Run the following command to add the line to your `~/.bashrc` file:
 
 
 
-```
+```bash
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 ```
 
@@ -21,19 +21,19 @@ To build ROS 2 packages, we need to install Colcon. Follow these steps:
 
 Run the following command to install Colcon:
 
-```
+```bash
 sudo apt install python3-colcon-common-extensions python3-vcstool
 ```
 
 Enable Colcon autocompletion by adding the following line to your `~/.bashrc` file:
 
-```
+```bash
 echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.bashrc
 ```
 
 Apply the changes by running:
 
-```
+```bash
 source ~/.bashrc
 ```
 
