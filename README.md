@@ -86,8 +86,12 @@ To verify the communication between ROS 2 and the Universal Robots robot, follow
    Observe the joint position values and ensure they reflect the current state of the robot.
 
 2. Move the robot using the PolyScope interface on the robot controller. You should observe changes in the joint positions reflected in the terminal where you are echoing the `/joint_states` topic.
+3. You can experiment with moving the robot by sending joint velocity commands. Run the test forward velocity controller launch file using the command line:
+```bash
+ ros2 launch ur_robot_driver test_forward_velocity_controller.launch.py
+ ```
 
-3. Additionally, you can visualize the communication graph using `rqt_graph`. Open a new terminal and enter the following command:
+5. Additionally, you can visualize the communication graph using `rqt_graph`. Open a new terminal and enter the following command:
 
     ```bash
     rqt_graph
