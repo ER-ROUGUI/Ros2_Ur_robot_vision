@@ -15,10 +15,6 @@ Run the following command to add the line to your `~/.bashrc` file:
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 ```
 
-
-### Installtion the driver
-
-
 ## Installing Colcon for Building Packages
 
 To build ROS 2 packages, we need to install Colcon. Follow these steps:
@@ -100,4 +96,39 @@ To verify the communication between ROS 2 and the Universal Robots robot, follow
    This will display a graphical representation of the ROS 2 communication graph, allowing you to see the connections between nodes.
 
 Now, you have successfully tested the communication between ROS 2 and the Universal Robots robot, and you can monitor joint positions and visualize the communication graph.
+
+## Setting up ROS 2 Workspace and Cloning GitHub Repository
+
+To use the provided ROS 2 packages, follow these steps to set up a workspace, clone the GitHub repository, and build the packages:
+
+1. **Create a ROS 2 Workspace:**
+    ```bash
+    mkdir -p ~/ros2_ws/src
+    cd ~/ros2_ws
+    ```
+
+2. **Clone the GitHub Repository:**
+    ```bash
+    
+    git clone github_repo_url src
+    ```
+
+3. **Build the Packages:**
+    ```bash
+    colcon build --symlink-install
+    ```
+
+4. **Source the Setup Script:**
+    ```bash
+    source install/setup.bash
+    echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
+    ```
+    ```bash
+    source ~/.bashrc
+    ```
+    
+
+Now, your ROS 2 workspace is set up, the GitHub repository is cloned, and the packages are built. You are ready to use the installed packages in your ROS 2 environment.
+
+If you encounter any issues during the build, refer to the repository's documentation for specific dependencies or build instructions.
 
