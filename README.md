@@ -110,7 +110,7 @@ To use the provided ROS 2 packages, follow these steps to set up a workspace, cl
 2. **Clone the GitHub Repository:**
     ```bash
     
-    git clone github_repo_url src
+    git clone https://github.com/ER-ROUGUI/Ros2_Ur_robot_vision.git src
     ```
 
 3. **Build the Packages:**
