@@ -115,6 +115,7 @@ To use the provided ROS 2 packages, follow these steps to set up a workspace, cl
 
 3. **Build the Packages:**
     ```bash
+    cd ~/ros2_ws
     colcon build --symlink-install
     ```
 
@@ -130,5 +131,4 @@ To use the provided ROS 2 packages, follow these steps to set up a workspace, cl
 
 Now, your ROS 2 workspace is set up, the GitHub repository is cloned, and the packages are built. You are ready to use the installed packages in your ROS 2 environment.
 
-If you encounter any issues during the build, refer to the repository's documentation for specific dependencies or build instructions.
 
