@@ -45,7 +45,7 @@ Now, you have Colcon installed and autocompletion enabled for a smoother package
 
 
 
- To install the ** ur_robot_driver ** you can choose to either use the binary packages or install from source. To install using binary packages, use the following command:
+ To install the **ur_robot_driver** you can choose to either use the binary packages or install from source. To install using binary packages, use the following command:
 
 ```bash
 sudo apt-get install ros-humble-ur
