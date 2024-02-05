@@ -30,21 +30,21 @@ To build ROS 2 packages, we need to install Colcon. Follow these steps:
 
 Run the following command to install Colcon:
 
-    ```
-    sudo apt install python3-colcon-common-extensions
-    ```
+```
+sudo apt install python3-colcon-common-extensions
+```
 
 Enable Colcon autocompletion by adding the following line to your `~/.bashrc` file:
 
-    ```
-    echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.bashrc
-    ```
+```
+echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.bashrc
+```
 
 Apply the changes by running:
 
-    ```
-    source ~/.bashrc
-    ```
+```
+source ~/.bashrc
+```
 
 Now, you have Colcon installed and autocompletion enabled for a smoother package-building.
 
@@ -52,8 +52,8 @@ Now, you have Colcon installed and autocompletion enabled for a smoother package
 
  To install the ** ur_robot_driver ** you can choose to either use the binary packages or install from source. To install using binary packages, use the following command:
 
-    ```bash
-    sudo apt-get install ros-humble-ur
-    ```
+```bash
+sudo apt-get install ros-humble-ur
+```
 
 This will install the UR Robot Driver for ROS 2 Humble using binary packages. Adjust the installation method based on your preferences and requirements.
