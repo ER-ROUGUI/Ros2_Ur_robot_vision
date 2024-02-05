@@ -66,7 +66,7 @@ Follow these steps to install the UR Driver and set up a UR robot for communicat
     ros2 launch ur_robot_driver ur_control.launch.py ur_type:=<ur_type> robot_ip:=192.168.1.101 launch_rviz:=true
     ```
 
-    Ensure to replace `<ur_type>` with the specific type of your Universal Robots robot and set the correct robot IP address (e.g., `192.168.1.101`). This command launches the UR robot driver and initializes communication with ROS 2.
+    Ensure to replace `<ur_type>` with the specific type of your Universal Robots robot ( ur3e , ur5e etc ) and set the correct robot IP address (e.g., `192.168.1.101`). This command launches the UR robot driver and initializes communication with ROS 2.
 
 3. Optionally, visualize the state of the robot in Rviz. setting up launch_rviz parametre on True.
 
