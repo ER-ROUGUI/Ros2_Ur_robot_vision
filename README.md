@@ -6,7 +6,7 @@ based on its DH parameters, implementing Image-Based Visual Servoing (IBVS), and
 ### Installation ROS2
 To begin, you'll need to install Ubuntu (version 22.04). Next, follow the steps outlined in the [official ROS2 Humble installation tutorial](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html).
 
-Run the following command to add the line to your `~/.bashrc` file:
+Run the following command to add the line to your -~/.bashrc- file:
 
 
 
