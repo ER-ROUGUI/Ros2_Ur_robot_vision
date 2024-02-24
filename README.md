@@ -156,4 +156,4 @@ To ensure consistent and accurate error calculations, the `normalized_coordinate
 
 ## Control law
 
-![Circle Detection](Ros2_Ur_robot_vision/my_controller/control_law.PNG.png)
+![Circle Detection](my_controller/control_law.png)
