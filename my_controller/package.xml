@@ -12,7 +12,7 @@
   <depend>sensor_msgs</depend>
   <depend>trajectory_msgs</depend>
   <depend>std_msgs</depend>
-  <depend>image_detection</depend>
+  <depend>image_detection_qr</depend>
 
 
 
