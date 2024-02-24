@@ -146,3 +146,14 @@ QR Code Corner Detection:
 
 **The image_detection_qr node:**  adopts a more robust approach by leveraging QR code corner detection.
 QR code corner detection extracts the coordinates of the four corners of detected QR codes in the image. This method proves to be more reliable for visual servoing tasks.
+
+**Computation of Error**
+The primary objective during visual servoing is to minimize the error between the detected visual features and a set of fixed points. This error is computed using the `calculate_error` function, which compares the coordinates of the detected features (either circle centers or QR code corners) with the predefined fixed points.
+
+**Normalized Coordinates**
+To ensure consistent and accurate error calculations, the `normalized_coordinates` function is utilized. This function transforms pixel coordinates into normalized coordinates in meters. This conversion is crucial for precise error computations, allowing the comparison of visual feature positions with fixed points in a standardized metric.
+
+
+## Control law
+
+![Circle Detection](Ros2_Ur_robot_vision/my_controller/detection_image.png)
