@@ -115,7 +115,7 @@ To use the provided ROS 2 packages, follow these steps to set up a workspace, cl
 3. **Build the Packages:**
     ```bash
     cd ~/ros2_ws
-    colcon build --symlink-install
+    colcon build --symlink-install --packages-select my_controller
     ```
 
 4. **Source the Setup Script:**
