@@ -154,6 +154,12 @@ The primary objective during visual servoing is to minimize the error between th
 To ensure consistent and accurate error calculations, the `normalized_coordinates` function is utilized. This function transforms pixel coordinates into normalized coordinates in meters. This conversion is crucial for precise error computations, allowing the comparison of visual feature positions with fixed points in a standardized metric.
 
 
-## Control law
+## Control Law Implementation
 
-![Circle Detection](my_controller/control_law.png)
+Now that we have all the necessary functions and methods, including the robot's kinematic model and the `QRDetector` for error detection, it's time to create the control law for visual servoing.
+
+Firstly, we'll set up a subscriber to continuously receive the real-time joint values of the robot. Subsequently, we'll calculate the Jacobian matrix for each of these joint states.
+
+Following that, we'll establish a publisher to send the corresponding joint velocity to the robot, aiming to minimize the error. Utilizing the control law outlined in the image below, we'll compute the interaction matrix in equilibrium, along with its pseudo-inverse. After 80 iterations, the robot will move at a velocity until it reaches zero error.
+
+![Control_Law](my_controller/control_law.png)
