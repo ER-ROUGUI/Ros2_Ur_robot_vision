@@ -130,4 +130,19 @@ To use the provided ROS 2 packages, follow these steps to set up a workspace, cl
 
 Now, your ROS 2 workspace is set up, the GitHub repository is cloned, and the packages are built. You are ready to use the installed packages in your ROS 2 environment.
 
+## Explanation of my_controller Functionality
+The my_controller package is designed to facilitate control and interaction with a Universal Robot UR3e using ROS 2 and Image-Based Visual Servoing (IBVS). The key components of this package include geometric and kinematic modeling, integration of the UR Robot Driver, and the implementation of visual servoing using either circle detection or QR code corner detection.
 
+
+1. **Circle Detection vs. QR Code Corner Detection:**
+   In the  `image_detection` and `image_detection_qr` nodes within the package, two different approaches are employed for visual  
+   feature extraction:
+
+   Circle Detection:
+
+**The image_detection node:**  utilizes circle detection to identify the centers of circular features in the camera image. This is done using OpenCV's HoughCircles function.
+While circle detection provides feature points, it may have limitations during visual servoing, leading to potential challenges.
+QR Code Corner Detection:
+
+**The image_detection_qr node:**  adopts a more robust approach by leveraging QR code corner detection.
+QR code corner detection extracts the coordinates of the four corners of detected QR codes in the image. This method proves to be more reliable for visual servoing tasks.
