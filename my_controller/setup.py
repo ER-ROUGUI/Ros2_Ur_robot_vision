@@ -11,7 +11,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
     ],
-    install_requires=['setuptools','image_detection'],
+    install_requires=['setuptools','image_detection_qr'],
     zip_safe=True,
     maintainer='stlab',
     maintainer_email='stlab@todo.todo',
@@ -25,7 +25,7 @@ setup(
             "publisher= my_controller.publisher:main",
             "publisher_verif= my_controller.publisher_verif:main",
             "pub_sub = my_controller.pub_sub:main",
-            "image_detection = my_controller.image_detection:main"
+            "image_detection_qr = my_controller.image_detection_qr:main"
 
 
 
