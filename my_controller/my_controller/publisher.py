@@ -1,3 +1,4 @@
+#  Any question? you can send E-mail to saad.errougui@hotmail.com
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float64MultiArray
@@ -9,29 +10,31 @@ from my_controller.image_detection_qr import QRDetector
 import math
 import time
 import numpy as np
-def tableDHM(q):
+def tableDHM(q):  # DH Parametres and not MDH !!!!
   
     tableDHM_out = np.array([ 
-                            [q[0]  ,  0,       0.15185 ,    np.pi/2],
-                            [q[1]  , -0.24355 ,  0      ,    0],
-                            [q[2]  , -0.2132,  0      ,    0],
-                            [q[3]  ,  0,       0.13105 ,   np.pi/2],
-                            [q[4]  ,  0 ,      0.08535 ,   -np.pi/2],
-                            [q[5]  ,  0 ,      0.0921  ,   0]]) # Same DHM parameters as Q2
+                            [q[0]          ,  0        ,       0.15185 ,    np.pi/2 ],
+                            [q[1]          , -0.24355  ,       0       ,    0       ],
+                            [q[2]          , -0.2132   ,       0       ,    0       ],
+                            [q[3]          ,  0        ,       0.13105 ,    np.pi/2 ],
+                            [q[4]          ,  0        ,       0.08535 ,   -np.pi/2 ],
+                            [q[5]          ,  0        ,       0.0921  ,    0       ],
+                            [  0           ,  0        ,       0       ,    0.001   ]]) # The End-effector Transformation
                            # ADD T OOLS DHM PARAMETERS HERE
     
 
     return tableDHM_out
 
-def transformation_i_i_1(theta_i, d_i, r_i,alpha_i ):
+def transformation_i_i_1(theta_i, r_i, d_i,alpha_i ):
     
 
 
-    transformation_i_i_1_out=np.array([[np.cos(theta_i),                   -np.sin(theta_i)*np.cos(alpha_i)    , np.sin(theta_i)*np.cos(alpha_i) ,   d_i*np.cos(theta_i)],
-                        [np.sin(theta_i) ,                   np.cos(alpha_i)*np.cos(theta_i) ,  -(np.cos(theta_i))*np.sin(alpha_i) ,   d_i*np.sin(theta_i)],
-                        [0 ,                                  np.sin(alpha_i) ,                  np.cos(alpha_i) ,                                    r_i],
-                        [0,                                   0,                                 0,                                                    1]])
+    transformation_i_i_1_out = np.array([[np.cos(theta_i),     -np.sin(theta_i)*np.cos(alpha_i)    , np.sin(theta_i)*np.sin(alpha_i) ,   r_i*np.cos(theta_i)],
+                                        [np.sin(theta_i) ,     np.cos(theta_i)*np.cos(alpha_i) ,  -(np.cos(theta_i))*np.sin(alpha_i) ,   r_i*np.sin(theta_i)],
+                                        [0 ,                   np.sin(alpha_i) ,                  np.cos(alpha_i) ,                                    d_i],
+                                        [0,                            0,                                 0,                                              1]])
                  
+
 
     return transformation_i_i_1_out
 
@@ -65,9 +68,10 @@ def list_g_0i(q_cur):
         
     return list_g_0i_out
 
-qd =np.array([0, -1.74532925 , 0 ,  -1.74532925 , 0  ,   0])
-# print(list_g_0i(qd))
-g0E = list_g_0i(qd)
+# For testing
+#qd =np.array([0, -np.pi/2 , -np.pi/2 , -np.pi/2 , np.pi/2 + np.pi ,   -np.pi/2])
+## print(list_g_0i(qd))
+#g0E = list_g_0i(qd)
 #print(g0E[5])
 
 ############################################################" kinematic model ur3e "
