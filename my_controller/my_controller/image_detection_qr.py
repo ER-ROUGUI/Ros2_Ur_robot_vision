@@ -50,6 +50,26 @@ class QRDetector:
         y_normalized = (y_pixel - self.v0) / self.fy
         return x_normalized, y_normalized
 
+    #computing error with pixel cordinates
+    # def calculate_error(self, img, fixed_points, qr_coordinates):
+    #     if not fixed_points or not qr_coordinates:
+    #         return np.zeros(2 * len(fixed_points))
+
+    #     # Initialize errors vector
+    #     errors = np.zeros(2 * len(fixed_points))
+
+    #     for i, point in enumerate(fixed_points):
+    #         # Use pixel coordinates for error calculation
+    #         errors[2 * i], errors[2 * i + 1] = point[0] - qr_coordinates[i][0], point[1] - qr_coordinates[i][1]
+    
+                
+    #         # Draw line between fixed point and corresponding QR code point
+    #         cv2.line(img, point, (int(qr_coordinates[i][0]), int(qr_coordinates[i][1])), (255, 0, 0), 2)
+
+    #     return errors
+    
+    # comput error with normalized cordinates
+    
     def calculate_error(self, img, fixed_points, qr_coordinates):
         if not fixed_points or not qr_coordinates:
             return np.zeros(2 * len(fixed_points))
@@ -58,9 +78,10 @@ class QRDetector:
         errors = np.zeros(2 * len(fixed_points))
 
         for i, point in enumerate(fixed_points):
-            # Use pixel coordinates for error calculation
-            errors[2 * i], errors[2 * i + 1] = point[0] - qr_coordinates[i][0], point[1] - qr_coordinates[i][1]
 
+            fixed_point_normalized = self.normalized_coordinates(point[0], point[1])
+            qr_point_normalized = self.normalized_coordinates(qr_coordinates[i][0], qr_coordinates[i][1])
+            errors[2 * i], errors[2 * i + 1] = fixed_point_normalized[0] - qr_point_normalized[0], fixed_point_normalized[1] - qr_point_normalized[1]
             # Draw line between fixed point and corresponding QR code point
             cv2.line(img, point, (int(qr_coordinates[i][0]), int(qr_coordinates[i][1])), (255, 0, 0), 2)
 
