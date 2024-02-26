@@ -96,18 +96,17 @@ def ComputeJac(q_cur):
     return J
 
 def endeffector_camera():
-    # Rotation matrix around z-axis by 45 degrees
-    transformation_matrix = np.array([
-                                    [1, 0, 0 , 0],
-                                    [0 , np.cos(np.pi/6), np.sin(np.pi/6),  0],
-                                    [0 , -np.sin(np.pi/6), np.cos(np.pi/6),  0],
-                                    [0, 0, 0 , -0.15],
-                                    [0, 0, 0 , 1]
-                                    ])
+    # Rotation matrix around x-axis by 30 degrees pi/6 rad // camera wrt End Effector
+    transformation_matrix_Camera = np.array([
+                                    [1   , 0               , 0              ,  0    ],
+                                    [0   , np.cos(np.pi/6) , -np.sin(np.pi/6),  0    ],
+                                    [0   , np.sin(np.pi/6), np.cos(np.pi/6),  -0.15],
+                                    [0   , 0               , 0              ,  1    ]
+                                                                                    ])
 
 
 
-    return transformation_matrix
+    return transformation_matrix_Camera
 
 def skew_matrix(vector):
     if vector.shape == (3, ) :
