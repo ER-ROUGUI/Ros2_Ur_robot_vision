@@ -180,7 +180,7 @@ class JointVelocityPublisher(Node):
         normalized_cordinates = [self.image_constructor.normalized_coordinates(Qr_corner[0], Qr_corner[1]) for Qr_corner in qr_coordinates]
         
         
-        self.depth=[0,8, 0.8, 0.8 ,0.8]
+        self.depth=[0.8, 0.8, 0.8 ,0.8]
         global interaction_matrix_result
         interaction_matrix_result = interaction_matrix(self.normalized_cordinates, self.depth)
         # error = self.image_constructor.calculate_error(
